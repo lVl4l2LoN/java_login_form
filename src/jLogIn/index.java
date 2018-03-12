@@ -17,6 +17,12 @@ public class index extends javax.swing.JFrame {
     public index() {
         initComponents();
     }
+    
+    //overloaded constructor to pass username from login into the index frame
+    public index(String userName){
+        initComponents();
+        lblUserName.setText(userName);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,35 +33,63 @@ public class index extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblWelcome = new javax.swing.JLabel();
+        btnLogOut = new javax.swing.JButton();
+        lblUserName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Welcome");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblWelcome.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblWelcome.setText("Welcome,");
+        lblWelcome.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        btnLogOut.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnLogOut.setText("Log Out");
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogOutActionPerformed(evt);
+            }
+        });
+
+        lblUserName.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnLogOut))
             .addGroup(layout.createSequentialGroup()
                 .addGap(322, 322, 322)
-                .addComponent(jLabel1)
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lblUserName))
+                    .addComponent(lblWelcome))
+                .addContainerGap(429, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(jLabel1)
-                .addContainerGap(335, Short.MAX_VALUE))
+                .addComponent(btnLogOut)
+                .addGap(75, 75, 75)
+                .addComponent(lblWelcome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblUserName)
+                .addContainerGap(322, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new jLog_in_form().setVisible(true);
+    }//GEN-LAST:event_btnLogOutActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -87,11 +121,15 @@ public class index extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new index().setVisible(true);
+                
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnLogOut;
+    private javax.swing.JLabel lblUserName;
+    private javax.swing.JLabel lblWelcome;
     // End of variables declaration//GEN-END:variables
 }

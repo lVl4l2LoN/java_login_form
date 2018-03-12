@@ -73,7 +73,6 @@ public class register extends javax.swing.JFrame {
         lblEmptyUserName = new javax.swing.JLabel();
         lblEmptyPass = new javax.swing.JLabel();
         lblEmptyCP = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         jopPass.setForeground(new java.awt.Color(255, 51, 51));
 
@@ -124,8 +123,6 @@ public class register extends javax.swing.JFrame {
         lblEmptyCP.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblEmptyCP.setForeground(new java.awt.Color(255, 51, 51));
 
-        jLabel2.setText("jLabel2");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -157,8 +154,7 @@ public class register extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtConfirmPass, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(lblEmptyCP))))
-                    .addComponent(jLabel2))
+                                .addComponent(lblEmptyCP)))))
                 .addContainerGap(260, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -187,9 +183,7 @@ public class register extends javax.swing.JFrame {
                             .addComponent(txtConfirmPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(btnSubmit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -226,8 +220,9 @@ public class register extends javax.swing.JFrame {
        if(validate_login(user,pwd))
        {
            jopLogIn.showMessageDialog(null, "Registration Successful");
-           new index().setVisible(true);
            this.dispose();
+           new index(user).setVisible(true);
+           
        }
                   
        else
@@ -274,7 +269,6 @@ public class register extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JOptionPane jopLogIn;
     private javax.swing.JOptionPane jopPass;

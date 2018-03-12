@@ -155,8 +155,9 @@ public class jLog_in_form extends javax.swing.JFrame {
        if(validate_login(user,pwd))
        {
            jOpMessage.showMessageDialog(null, "Correct Login Credentials");
-           new index().setVisible(true);
            this.dispose();
+           new index(user).setVisible(true);
+           
        }
                   
        else
