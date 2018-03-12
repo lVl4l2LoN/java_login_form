@@ -210,7 +210,7 @@ public class register extends javax.swing.JFrame {
    else if(txtConfirmPass.getPassword().length==0)
        lblEmptyCP.setText("* Empty Confirm Password field");
    else if(!(Arrays.equals(txtPass.getPassword(), txtConfirmPass.getPassword()))){
-       jLabel2.setText(txtPass.getPassword()+" "+txtConfirmPass.getPassword());
+       
        jopPass.showMessageDialog(null, "The passwords do not match!");
    }
    else{
